@@ -15,7 +15,6 @@ export default {
     methods: {
         openUser(user) {
             this.$router.push(`/users/${ user }`);
-            console.log(user)
         }
     }
 }
