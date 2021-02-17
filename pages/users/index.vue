@@ -12,14 +12,19 @@
 
 <script>
 export default {
-    async asyncData({ $axios }) {
-        const _url = 'https://jsonplaceholder.typicode.com/users';
-        const users = await $axios.$get(_url);
-        return { users };
+    async fetch({ store }) {
+        if (store.getters.users.length === 0) {
+            await store.dispatch('users/fetch')
+        }
     },
     data: () => ({
         pageName: 'Users Page'
     }),
+    computed: {
+        users() {
+            return this.$store.getters.users
+        }
+    },
     methods: {
         openUser(user) {
             this.$router.push(`/users/${ user }`);
