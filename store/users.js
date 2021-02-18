@@ -10,12 +10,12 @@ export const mutations = {
 
 export const actions = {
     async fetch({ commit }) {
-        const _url = `https://jsonplaceholder.typicode.com/users/${params.id}`;
-        const users = await $axios.$get(_url);
+        const _url = `https://jsonplaceholder.typicode.com/users`;
+        const users = await this.$axios.$get(_url);
         commit('setUsers', users);
     }
 };
 
 export const getters = {
-    users: s => s.state
+    users: s => s.users
 };
