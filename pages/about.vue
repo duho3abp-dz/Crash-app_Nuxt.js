@@ -7,3 +7,9 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit fugiat porro ipsam error eum, corrupti atque magnam minus quos fuga. Vitae aperiam modi maxime, deserunt dignissimos voluptatem debitis fugit veritatis.</p>
     </section>
 </template>
+
+<script>
+export default {
+    middleware: ['auth']
+}
+</script>
